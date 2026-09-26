@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Cá Nhân & Sản Phẩm</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #eef6ff 0%, #fdfefe 100%);
+            color: #1e2d3d;
+            padding: 30px 15px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 22px;
+            box-shadow: 0 18px 40px rgba(13, 76, 138, 0.12);
+            padding: 30px 35px;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 2px solid #edf3fa;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .avatar {
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0056b3, #4ea1ff);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.22);
+        }
+        h1 {
+            margin: 0;
+            color: #0d4c8a;
+            font-size: clamp(2rem, 3vw, 2.9rem);
+        }
+        .subtitle {
+            margin: 6px 0 0;
+            color: #5f7a96;
+            font-size: 1.05rem;
+        }
+        .tag {
+            background: #e7f3ff;
+            color: #0056b3;
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .intro {
+            background: #f6faff;
+            border-left: 5px solid #0056b3;
+            border-radius: 12px;
+            padding: 18px 22px;
+            line-height: 1.8;
+            color: #3d4d5f;
+            font-size: 1.04rem;
+            margin-bottom: 30px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+        .info-card {
+            background: #fff;
+            border: 1px solid #dfeaf6;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+        }
+        .info-card h3 {
+            margin: 0 0 12px;
+            color: #195991;
+            font-size: 1.08rem;
+        }
+        .info-card p {
+            margin: 0;
+            color: #53677d;
+            line-height: 1.7;
+        }
+        .section-title {
+            color: #123c69;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 8px;
+            margin: 35px 0 20px;
+            font-size: 1.7rem;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 24px;
+        }
+        .product-card {
+            background: #fff;
+            border: 1px solid #dfeaf7;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card h3 {
+            margin-top: 0;
+            color: #0d4c8a;
+            font-size: 1.3rem;
+        }
+        .product-card p {
+            color: #4d5f75;
+            line-height: 1.7;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #dfeaf3;
+            margin: 14px 0;
+            display: block;
+        }
+        .pdf-box {
+            background: #f9fbff;
+            border: 1px dashed #9ec5f1;
+            border-radius: 12px;
+            padding: 22px 18px;
+            margin: 14px 0;
+            text-align: center;
+            color: #0d4c8a;
+        }
+        .pdf-icon {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            margin: 14px 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 12px;
+        }
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: 0.2s ease;
+            margin-top: 10px;
+        }
+        .btn-pdf { background: #0b6acb; color: #fff; }
+        .btn-pdf:hover { background: #0959a7; }
+        .btn-image { background: #13a77b; color: #fff; }
+        .btn-image:hover { background: #0d8f68; }
+        .btn-video { background: #ff3b30; color: #fff; }
+        .btn-video:hover { background: #d9281c; }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid #edf1f6;
+            padding-top: 20px;
+            color: #7588a0;
+            font-size: 0.96rem;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 20px 18px; }
+            .topbar { align-items: flex-start; }
+            .profile { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="profile">
+                <div class="avatar">NV</div>
+                <div>
+                    <h1>Nguyễn Văn A</h1>
+                    <p class="subtitle">Sinh viên ngành Công Nghệ Thông Tin</p>
+                </div>
+            </div>
+            <div class="tag">Portfolio Cá Nhân</div>
+        </div>
+
+        <p class="intro">
+            Xin chào! Mình là Nguyễn Văn A, hiện đang học tập và rèn luyện kỹ năng trong lĩnh vực công nghệ thông tin. Mình luôn muốn tạo ra những sản phẩm trực quan, dễ hiểu và có giá trị thực tế. Trang này sẽ giới thiệu một số dự án cá nhân mà mình đã hoàn thành, bao gồm tài liệu PDF, ảnh infographic và video hướng dẫn trên YouTube.
+        </p>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Thông tin cá nhân</h3>
+                <p><strong>Họ tên:</strong> Nguyễn Văn A</p>
+                <p><strong>Email:</strong> nguyenvana@email.com</p>
+                <p><strong>Trường:</strong> Đại học Công nghệ</p>
+            </div>
+            <div class="info-card">
+                <h3>Mục tiêu</h3>
+                <p>Phát triển kỹ năng thiết kế web, tối ưu trải nghiệm người dùng và tạo ra sản phẩm kỹ thuật số chuyên nghiệp.</p>
+            </div>
+            <div class="info-card">
+                <h3>Sở thích</h3>
+                <p>Thiết kế giao diện, học lập trình web, nghiên cứu công nghệ mới và sáng tạo nội dung trực quan.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Các Sản Phẩm Đã Tạo</h2>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div>
+                    <h3>1. File PDF</h3>
+                    <p>Tài liệu tổng hợp nội dung bài tập, ý tưởng và các thông tin quan trọng được trình bày dưới dạng PDF rõ ràng, dễ xem.</p>
+                    <div class="pdf-box">
+                        <div class="pdf-icon">📄</div>
+                        <strong>BAI_TAP_LAB05.pdf</strong>
+                    </div>
+                </div>
+                <a href="BAI_TAP_LAB05.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-pdf">Xem tài liệu PDF</a>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <h3>2. File PNG</h3>
+                    <p>Infographic minh họa kiến thức chính của bài học, được thiết kế với bố cục trực quan để dễ tiếp cận và truyền tải thông tin.</p>
+                    <img class="product-image" src="Lab05_Ex2.1.png" alt="Infographic sản phẩm">
+                </div>
+                <a href="Lab05_Ex2.1.png" target="_blank" rel="noopener noreferrer" class="btn btn-image">Mở ảnh PNG đầy đủ</a>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <h3>3. Video YouTube</h3>
+                    <p>Video hướng dẫn và trình bày sản phẩm trực tiếp trên nền tảng YouTube, giúp người xem theo dõi dễ dàng hơn.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/hwOGPCl9_k8" title="Video giới thiệu sản phẩm" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <a href="https://youtube.com/shorts/hwOGPCl9_k8?si=fabN7ct3MOJByHY3" target="_blank" rel="noopener noreferrer" class="btn btn-video">Xem trên YouTube</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 | Thiết kế bởi Nguyễn Văn A | Mọi quyền được bảo lưu.</p>
+        </footer>
+    </div>
+</body>
+</html>
